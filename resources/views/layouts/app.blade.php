@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,22 +15,37 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            <livewire:layout.navigation />
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    {{-- The navbar with `sticky` and `full-width` --}}
+    <livewire:nav />
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+    {{-- The main content with `full-width` --}}
+    <div class="bg-base-300">
+        <x-main with-nav full-width>
+
+            {{-- This is a sidebar that works also as a drawer on small screens --}}
+            {{-- Notice the `main-drawer` reference here --}}
+            <x-slot:sidebar drawer="main-drawer" collapsible class="bg-base-100">
+
+            {{-- Activates the menu item when a route matches the `link` property --}}
+                <x-menu activate-by-route active-bg-color="text-white bg-gradient-to-r from-cyan-500 to-blue-500">
+                    <x-menu-item title="Dashboard" icon="o-home" :link="route('dashboard')" />
+                    <x-menu-item title="Course" icon="o-book-open" :link="route('courses.index')" />
+    {{--                <x-menu-sub title="Settings" icon="o-cog-6-tooth">--}}
+    {{--                    <x-menu-item title="Wifi" icon="o-wifi" link="####" />--}}
+    {{--                    <x-menu-item title="Archives" icon="o-archive-box" link="####" />--}}
+    {{--                </x-menu-sub>--}}
+                </x-menu>
+            </x-slot:sidebar>
+
+            {{-- The `$slot` goes here --}}
+            <x-slot:content>
+                    {{ $slot }}
+            </x-slot:content>
+        </x-main>
+    </div>
+
+    {{--  TOAST area --}}
+    <x-toast />
     </body>
 </html>
