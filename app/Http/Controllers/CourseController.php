@@ -17,20 +17,14 @@ class CourseController extends Controller
         return view('courses.create');
     }
 
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'title' => ['required'],
-            'description' => ['required'],
-            'duration' => ['required'],
-        ]);
-
-        return Course::create($data);
-    }
-
     public function show(Course $course)
     {
         return view('courses.show', compact('course'));
+    }
+
+    public function edit(Course $course)
+    {
+        return view('courses.edit', compact('course'));
     }
 
     public function update(Request $request, Course $course)
@@ -50,6 +44,6 @@ class CourseController extends Controller
     {
         $course->delete();
 
-        return response()->json();
+        return redirect()->route('courses.index');
     }
 }

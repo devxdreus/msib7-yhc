@@ -10,6 +10,8 @@ class Course extends Component
 {
     use Toast;
 
+    public $course;
+
     #[Validate('required|min:3')]
     public $title;
 
@@ -19,10 +21,13 @@ class Course extends Component
     #[Validate('required|integer')]
     public $duration;
 
-    public function __construct($title = '', $description = '', $duration = '')  {
-        $this->title = $title;
-        $this->description = $description;
-        $this->duration = $duration;
+    public function mount($course = '')  {
+        if ($course){
+            $this->course = $course;
+            $this->title = $course->title;
+            $this->description = $course->description;
+            $this->duration = $course->duration;
+        }
     }
 
     public function save()
@@ -36,6 +41,20 @@ class Course extends Component
         ]);
 
         $this->success('Materi Berhasil Ditambahkan');
+
+        $this->redirectRoute('courses.index', navigate: true);
+    }
+    public function update()
+    {
+        $this->validate();
+
+        $this->course->update([
+            'title' => $this->title,
+            'description' => $this->description,
+            'duration' => $this->duration
+        ]);
+
+        $this->success('Materi Berhasil Di Update!');
 
         $this->redirectRoute('courses.index', navigate: true);
     }

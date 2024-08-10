@@ -13,8 +13,13 @@
         </div>
 
         <div class="flex justify-end gap-2">
-            <x-button label="Cancel" class="btn-neutral" :link="route('courses.index')" />
-            <x-button label="Tambah" icon="o-rocket-launch" class="btn-gradient-primary px-12" wire:click="save" />
+            @if($course)
+                <x-button label="Cancel" class="btn-neutral" :link="route('courses.update', $course->id)" />
+                <x-button label="Update" icon="o-rocket-launch" class="btn-gradient-primary px-12" wire:click="update" />
+            @else
+                <x-button label="Cancel" class="btn-neutral" :link="route('courses.index')" />
+                <x-button label="Tambah" icon="o-rocket-launch" class="btn-gradient-primary px-12" wire:click="save" />
+            @endif
         </div>
     </div>
 </div>

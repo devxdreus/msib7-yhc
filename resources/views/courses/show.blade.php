@@ -18,7 +18,10 @@
 
             <div class="self-stretch p-4 flex gap-2">
                 <x-button icon="o-arrow-uturn-left" class="btn-square" :link="route('courses.index')" />
-                <x-button icon="o-pencil" class="btn-square btn-warning" />
+                <x-button icon="o-pencil" class="btn-square btn-warning btn-gradient-warning" :link="route('courses.edit', $course->id)" />
+                <form action="{{route('courses.destroy', $course->id)}}" method="post"> @csrf @method('DELETE')
+                    <x-button icon="o-trash" class="btn-square btn-danger btn-gradient-danger" type="submit" />
+                </form>
             </div>
         </div>
 
@@ -39,7 +42,7 @@
 
                 @foreach($course->lessons as $lesson )
                     <a href="{{route('courses.show', $course->id)}}" wire:navigate >
-                        <div class="flex bg-base-300 rounded-xl p-4 gap-8 h-36">
+                        <div class="flex bg-base-100 hover:bg-base-300 transition rounded-xl p-4 gap-8 h-36">
                             <div class="basis-1/6 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl flex justify-center items-center">
                                 <x-icon name="o-book-open" class="w-12 h-12 text-slate-200" />
                             </div>
@@ -49,7 +52,7 @@
                                 <x-badge value="{{$lesson->reference}}" />
                             </div>
                             <div class="self-stretch flex items-center">
-                                <x-button icon="o-pencil" class="btn-square btn-warning" />
+                                <x-button icon="o-pencil" class="btn-gradient-warning" />
                             </div>
                         </div>
                     </a>

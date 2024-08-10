@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->string('duration');
+            $table->integer('duration');
             $table->timestamps();
         });
     }
