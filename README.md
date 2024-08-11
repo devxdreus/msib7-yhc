@@ -45,8 +45,7 @@ npm run dev
 
 ### Login & Register
 
-<img src="https://i.ibb.co.com/NyKtC4f/login-dark.png" alt="login-dark" width="49%">
-<img src="https://i.ibb.co.com/jMs0F0p/register.png" alt="login-dark" width="49%">
+<img src="https://i.ibb.co.com/NyKtC4f/login-dark.png" alt="login-dark" width="49%"><img src="https://i.ibb.co.com/jMs0F0p/register.png" alt="login-dark" width="49%">
 
 ### Dashboard
 
