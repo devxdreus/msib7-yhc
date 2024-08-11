@@ -6,6 +6,8 @@ Route::view('/', 'welcome');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('courses', \App\Http\Controllers\CourseController::class);
+
+    Route::resource('courses/{course}/lessons', \App\Http\Controllers\LessonController::class);
 });
 
 Route::view('dashboard', 'dashboard')

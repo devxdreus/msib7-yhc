@@ -12,7 +12,7 @@ class CourseTable extends Component
     public $sort = 'desc';
     public $search = '';
 
-    public function __construct()
+    public function mount()
     {
         $this->syncData();
     }

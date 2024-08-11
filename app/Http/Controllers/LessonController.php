@@ -2,11 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
+    public function create(Course $course)
+    {
+        return view('lessons.create', compact('course'));
+    }
+
+    public function edit(Course $course, Lesson $lesson)
+    {
+        return view('lessons.edit', compact('course', 'lesson'));
+    }
+
+    public function destroy(Course $course, Lesson $lesson)
+    {
+        $lesson->delete();
+
+        return redirect()->route('courses.show', $course);
+    }
+
     public function index()
     {
         return Lesson::all();
@@ -41,12 +59,5 @@ class LessonController extends Controller
         $lesson->update($data);
 
         return $lesson;
-    }
-
-    public function destroy(Lesson $lesson)
-    {
-        $lesson->delete();
-
-        return response()->json();
     }
 }
