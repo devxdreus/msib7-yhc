@@ -15,15 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@mail.com',
         ]);
 
+         User::factory(79)->create();
+
         Course::factory(15)->create()->each(function (Course $course) {
-            Lesson::factory(10)->create([
+            Lesson::factory(11)->create([
                 'course_id' => $course->id,
             ]);
         });
