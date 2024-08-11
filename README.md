@@ -45,23 +45,19 @@ npm run dev
 
 ### Login & Register
 
-<img src="https://i.ibb.co.com/NyKtC4f/login-dark.png" alt="login-dark" width="49%"><img src="https://i.ibb.co.com/jMs0F0p/register.png" alt="login-dark" width="49%">
+<img src="https://i.ibb.co.com/NyKtC4f/login-dark.png" alt="login-dark" width="50%"><img src="https://i.ibb.co.com/jMs0F0p/register.png" alt="login-dark" width="50%">
 
 ### Dashboard
 
-<img src="https://i.ibb.co.com/sQrStsS/dashboard-dark.png" alt="login-dark" width="49%">
-<img src="https://i.ibb.co.com/tLN0791/dashboard.png" alt="login-dark" width="49%">
+<img src="https://i.ibb.co.com/sQrStsS/dashboard-dark.png" alt="login-dark" width="50%"><img src="https://i.ibb.co.com/tLN0791/dashboard.png" alt="login-dark" width="50%">
 
 ### Course dan Materi
 
-<img src="https://i.ibb.co.com/mX3nDpt/courses-dark.png" alt="login-dark" width="49%">
-<img src="https://i.ibb.co.com/Y2X584F/courses.png" alt="login-dark" width="49%">
+<img src="https://i.ibb.co.com/mX3nDpt/courses-dark.png" alt="login-dark" width="50%"><img src="https://i.ibb.co.com/Y2X584F/courses.png" alt="login-dark" width="50%">
 
-<img src="https://i.ibb.co.com/vH5wQKX/courses-show-dark.png" alt="login-dark" width="49%">
-<img src="https://i.ibb.co.com/JRLr5SS/courses-show.png" alt="login-dark" width="49%">
+<img src="https://i.ibb.co.com/vH5wQKX/courses-show-dark.png" alt="login-dark" width="50%"><img src="https://i.ibb.co.com/JRLr5SS/courses-show.png" alt="login-dark" width="50%">
 
-<img src="https://i.ibb.co.com/BGKHJ57/courses-edit-dark.png" alt="login-dark" width="49%">
-<img src="https://i.ibb.co.com/187qDsr/courses-edit.png" alt="login-dark" width="49%">
+<img src="https://i.ibb.co.com/BGKHJ57/courses-edit-dark.png" alt="login-dark" width="50%"><img src="https://i.ibb.co.com/187qDsr/courses-edit.png" alt="login-dark" width="50%">
 
 <a href="https://ibb.co.com/9gNc6JG"><img src="https://i.ibb.co.com/SyP5b2J/delete-lessons-dark.png" alt="delete-lessons-dark" border="0"></a>
 <a href="https://ibb.co.com/YtdY4vw"><img src="https://i.ibb.co.com/FBYNkGC/lessons-add.png" alt="lessons-add" border="0"></a>
